@@ -139,4 +139,7 @@ function onWindowResize() {
 // Escuchar cuando el usuario cambia el tamaño de la ventana
 window.addEventListener("resize", onWindowResize);
 
+const maxPixelRatio = Math.min(window.devicePixelRatio, 1.5);
+renderer.setPixelRatio(maxPixelRatio);
+
 document.body.appendChild(renderer.domElement);

@@ -1,0 +1,53 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <title>Experimental Glass/Bloom</title>
+        <style>
+            * {
+                padding: 0;
+                margin: 0;
+            }
+            #canvas {
+                width: 100vw;
+                height: 100vh;
+            }
+
+            .texto-superpuesto {
+                font-family: sans-serif;
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+
+                color: #ffffff; /* El color base del texto influye en la fusión */
+                font-size: 3rem;
+                font-weight: bold;
+
+                /* Modo de fusión: adopta las luces, sombras y ruido del canvas de fondo */
+                mix-blend-mode: overlay; /* Opciones recomendadas: soft-light, difference, color-dodge */
+
+                pointer-events: none; /* Permite interactuar con el canvas 3D a través del texto */
+            }
+            @media (min-width: 640px) {
+                .texto-superpuesto {
+                    font-size: 4rem;
+                }
+            }
+        </style>
+    </head>
+    <body>
+        <div class="contenedor-escena">
+            <h1 class="texto-superpuesto">MAIMAISTUDIO</h1>
+        </div>
+        <script type="importmap">
+            {
+                "imports": {
+                    "three": "https://cdn.jsdelivr.net/npm/three@0.186.0/build/three.module.js",
+                    "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.186.0/examples/jsm/"
+                }
+            }
+        </script>
+        <script type="module" src="./code.js"></script>
+    </body>
+</html>

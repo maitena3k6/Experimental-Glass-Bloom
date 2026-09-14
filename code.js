@@ -36,8 +36,8 @@ const bloomPass = new UnrealBloomPass(
 );
 composer.addPass(bloomPass);
 
-const filmPass = new FilmPass(0.35, 0.025, 648, false);
-composer.addPass(filmPass);
+//const filmPass = new FilmPass(0.35, 0.025, 648, false);
+// composer.addPass(filmPass);
 ///
 const cellsMaterial = new THREE.MeshPhysicalMaterial({
   color: 0xffffff, // Base color of the glass
